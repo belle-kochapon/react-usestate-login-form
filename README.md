@@ -16,7 +16,7 @@ This project demonstrates a fundamental React implementation of a simple login f
     ```
 2.  **Navigate to the project directory:**
     ```bash
-    cd react-login-form-example
+    cd react-usestate-login-form
     ```
 3.  **Install dependencies:**
     ```bash
