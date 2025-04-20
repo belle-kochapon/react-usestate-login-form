@@ -1,6 +1,6 @@
 # React User Registration Form with `react-hook-form`
 
-This project demonstrates a user registration form built using the `react-hook-form` library. It showcases how to efficiently handle multiple form inputs, implement basic validation, and manage form submission with significantly less code compared to traditional `useState`-based approaches (See https://github.com/belle-kochapon/react-usestate-login-form). 
+This project demonstrates a user registration form built using the `react-hook-form` library. It showcases how to efficiently handle multiple form inputs, implement basic validation, and manage form submission with significantly less code compared to traditional `useState`-based approaches (see https://github.com/belle-kochapon/react-usestate-login-form and https://github.com/belle-kochapon/react-bmi-calculator). 
 
 ## Key Concepts Illustrated
 
