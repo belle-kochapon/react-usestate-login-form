@@ -1,44 +1,66 @@
-import { useForm } from "react-hook-form";
-// import { useState } from "react";
+import { ChangeEvent, useState } from "react";
+import Button from "../components/Button";
 
-type UserRegisterInputs = {
-    username: string;
-    email: string;
-    password: string;
-    confirmPassword: string;
-    fullname: string;
-    surname: string;
-};
+function Login() {
+  // EX. Use "state" as a place to keep username and password
+  const [username, setUsername] = useState<string>("");
+  const [password, setPassword] = useState<string>("");
+   
+  // EX 2. Create onChangeUsername function
+  const onChangeUsername = (event: React.ChangeEvent<HTMLInputElement>) => {
+    // console.log(event);
+    // console.log(event.target.value);
+    setUsername(event.target.value);
+    console.log(username);
+  };
+  const onChangePassword = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setPassword(event.target.value)
+    console.log(password);
+  };
 
-function UserRegisterForm() {
-    const { register, handleSubmit } = useForm<UserRegisterInputs>(); // custom hook, different from useState
-    // const [username, setUsername] = useState();
-    const onSubmit = (data: any) => {
-    console.log(data);
-    };
+  const onSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    console.log(username);
+    console.log(password);
+  };
+  // structure
+  // const obj = {
+  //   event: {
+  //     target: {
+  //       value: "",
+  //     },
+  //   },
+  // };
 
-    return (
+  // commnd to reach out the "value" above
+  // obj.event.target.value
+
+  return (
     <>
-    <form onSubmit={handleSubmit(onSubmit)}>
-    {/* Add validation : https://react-hook-form.com/docs/useform/register */}
-        <label htmlFor="">Username:</label>
-        <input {...register("username", { required: true, minLength: 3 })} type="text" id="username" />
-        <label htmlFor="">Email:</label>
-        <input {...register("email")} type="text" id="email" />
-        <label htmlFor="">Password:</label>
-        <input {...register("password")} type="password" id="password" />  
-        <label htmlFor="">Confirm Password:</label>
-        <input {...register("confirmPassword")} type="text" id="confirmPassword" />
-        <label htmlFor="">Full name:</label>
-        <input {...register("fullname")} type="text" id="fullname" />
-        <label htmlFor="">Surname:</label>
-        <input {...register("surname")} type="text" id="surname" />        
-        <input type="submit" value="Submit" />
-    </form>
+      <form onSubmit={onSubmit}>
+        <div>
+          <label htmlFor="username">Username:</label>
+          <input
+            type="text"
+            id="username"
+            name="username"
+            // EX 2. add Event (see line 9)
+            onChange={onChangeUsername}
+          />
+        </div>
+        <div>
+          <label htmlFor="password">Password:</label>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            onChange={onChangePassword}/>
+        </div>
+        {/* Import "Button" component */}
+        <Button />
+      </form>
     </>
-    );
+  );
 }
 
-export default UserRegisterForm
-
-// Can use this file as Form.tsx, and create more than 1 function as different type of form such as RegisterForm, LoginForm, etc., then export them all in this file.
+export default Login

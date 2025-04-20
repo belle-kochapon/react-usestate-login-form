@@ -1,7 +1,7 @@
 function Button() {
     return (
         <>
-            <button>Calculate</button>
+            <button>Log in</button>
         </>
     );
 }
