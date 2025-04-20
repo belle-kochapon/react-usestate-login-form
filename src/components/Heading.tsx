@@ -2,11 +2,12 @@ import { ReactNode } from "react";
 
 type HeadingProps = {
    // ReactNode ทุกอย่างที่รีแอครับได้
-   children: ReactNode 
+   // children: ReactNode 
+   count: number;
 };
 
-function Heading({ children }: HeadingProps) {
-   return <div>{children}</div>; 
+function Heading({ count }: HeadingProps) {
+   return <div>{count}</div>; 
 }
 
 export default Heading;
